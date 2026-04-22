@@ -46,7 +46,7 @@ const USPs = [
   },
   {
     icon: ShieldCheck,
-    title: "Bespoke Aesthetic",
+    title: "Easter Buster",
     description: "Delivering world-class designs to enhance your market appearance and brand image."
   },
   {
@@ -138,9 +138,8 @@ export default function App() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] font-black leading-[1.1] sm:leading-[0.9] mb-8 sm:mb-10 tracking-tight italic text-brand-dark">
-              Digital <br className="hidden sm:block"/>
-              <span className="text-brand-primary font-serif not-italic">Canvases</span> <br className="hidden sm:block"/>
-              for Brands.
+              Agents of <br className="hidden sm:block"/>
+              <span className="text-brand-primary font-serif not-italic">Change</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-brand-text/80 font-medium max-w-lg mb-10 sm:mb-14 leading-relaxed tracking-tight">
@@ -233,7 +232,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-20 gap-8">
              <div className="max-w-xl">
                <span className="text-brand-primary text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">Product Exhibition</span>
-               <h2 className="text-4xl sm:text-5xl md:text-7xl font-black italic underline decoration-brand-secondary/30 underline-offset-8 text-brand-dark">Production <br className="hidden sm:block"/> Excellence.</h2>
+               <h2 className="text-4xl sm:text-5xl md:text-7xl font-black italic underline decoration-brand-secondary/30 underline-offset-8 text-brand-dark">Exclusive and <br className="hidden sm:block"/> Bespoke designs.</h2>
              </div>
              <p className="text-brand-text/60 text-sm max-w-xs leading-relaxed italic font-medium">A curated selection of our bespoke rigid printed plastic solutions.</p>
           </div>
@@ -310,7 +309,7 @@ export default function App() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-brand-gray-med">Electronic Mail</p>
-                    <a href="mailto:rodger@banjanipg.co.za" className="text-base sm:text-lg font-black hover:text-brand-primary transition-colors italic text-brand-text truncate block">rodger@banjanipg.co.za</a>
+                    <a href="mailto:roger@banjanipg.co.za" className="text-base sm:text-lg font-black hover:text-brand-primary transition-colors italic text-brand-text truncate block">roger@banjanipg.co.za</a>
                   </div>
                 </div>
 
@@ -327,7 +326,7 @@ export default function App() {
             </div>
             <div className="p-8 sm:p-10 md:p-16 bg-brand-light/20 flex flex-col justify-between">
               <div>
-                <h3 className="text-xl sm:text-2xl font-black italic mb-6 sm:mb-8 text-brand-dark">Rodger Mnguni</h3>
+                <h3 className="text-xl sm:text-2xl font-black italic mb-6 sm:mb-8 text-brand-dark">Roger Mnguni</h3>
                 <p className="text-sm text-brand-text/60 mb-8 sm:mb-10 leading-loose italic font-medium">
                   "Our goal is to redefine industrial packaging through artistic precision and world-class digital manufacturing."
                 </p>
