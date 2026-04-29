@@ -38,7 +38,7 @@ export const PRODUCT_IMAGES = [
 
 // FILTERED IMAGES (Removing Series 4 based on index 3 usually, but let's be safe and map them)
 export const GALLERY_IMAGES = [
-  { url: PRODUCT_IMAGES[0], title: "Exclusive Designs", desc: "Easter Buster Campaign to Drive Seasonal Sales" },
+  { url: PRODUCT_IMAGES[0], title: "Exclusive Designs", desc: "Delivering world-class designs on Black Friday, Christmas Hamper and Easter Buster campaigns to drive seasonal sales." },
   { url: PRODUCT_IMAGES[2], title: "Industrial Grade", desc: "Durable and aesthetic 20L plastic buckets." },
   // Series 4 removed: { url: PRODUCT_IMAGES[3], ...}
   { url: PRODUCT_IMAGES[4], title: "Custom Precision", desc: "High-definition print for clear branding." },
@@ -59,8 +59,8 @@ export const SERVICES = [
   },
   {
     icon: ShieldCheck,
-    title: "Easter Buster",
-    description: "Delivering world-class designs to enhance your brand image. We create exclusive designs for seasonal promotions."
+    title: "Exclusive Designs",
+    description: "Delivering world-class designs on 'Black Friday... Christmas Hamper and Easter Buster' campaigns to drive seasonal sales."
   },
   {
     icon: Calendar,
@@ -223,7 +223,7 @@ const HomePage = () => (
             <span className="text-brand-primary font-serif not-italic">Change</span>
           </h1>
           <p className="text-lg md:text-xl text-brand-text/70 font-medium max-w-lg leading-relaxed">
-            Revolutionizing 20L rigid plastic packaging with bespoke high-definition digital branding that drives sales and strengthens visual identity.
+            Revolutionizing 20L rigid plastic buckets with bespoke high-definition digital branding that drives sales and strengthens visual identity.
           </p>
           <div className="flex flex-wrap gap-6 pt-4">
             <Link to="/gallery" className="px-10 py-5 bg-brand-primary text-white rounded-full font-black text-[11px] uppercase tracking-[0.2em] shadow-xl hover:bg-brand-secondary transition-all hover:-translate-y-1">
@@ -272,13 +272,10 @@ const AboutPage = () => (
             <span className="text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">About Us</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black italic leading-tight text-brand-dark">
-            Why Choose Us?
+            20lt Buckets.
           </h2>
           <p className="text-xl text-brand-text/70 leading-loose font-medium">
-            We specialize in <span className="text-brand-primary">20lt Custom-Branded Rigid Printed Plastic Buckets</span> designed to help businesses promote, advertise, and strengthen their brand image. 
-          </p>
-          <p className="text-lg text-brand-text/60 leading-loose italic font-medium">
-            We have crafted unique print designs with strong promotional, selling, and advertising value propositions.
+            We have crafted unique print designs with promotional... selling and advertising value propositions.
           </p>
           <div className="flex items-center gap-6 text-brand-primary">
             <CheckCircle2 className="w-6 h-6" />
@@ -299,10 +296,10 @@ const AboutPage = () => (
         </div>
         <div className="grid md:grid-cols-2 gap-12">
           {[
-            "High digital-definition printing of your logo and brand colours.",
-            "Branded designs to establish a strong visual identity for your business.",
-            "Bespoke world-class printed designs to enhance image and appearance.",
-            "Exclusive designs for Christmas, Black Friday, and Easter Buster promotions."
+            "We offer a high digital definition print of your logo and brand colours.",
+            "We create branded designs to establish a strong visual identity of your business.",
+            "We deliver bespoke world-class printed designs to enhance your brand image and appearance.",
+            "We do exclusive and customised designs for Christmas Hampers... Black Friday and Easter Buster promotions."
           ].map((text, i) => (
             <div key={i} className="flex gap-6 items-start p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-brand-primary transition-all group">
               <div className="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white shrink-0 font-black">
@@ -389,7 +386,7 @@ const GalleryPage = () => (
     <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
       <span className="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em] mb-4 block underline decoration-brand-primary/20 underline-offset-8">Production Excellence</span>
       <h2 className="text-4xl md:text-7xl font-black italic text-brand-dark mb-4">Exclusive Designs.</h2>
-      <p className="text-brand-text/60 italic font-medium max-w-lg mx-auto">Easter Buster Campaign to Drive Seasonal Sales</p>
+      <p className="text-brand-text/60 italic font-medium max-w-lg mx-auto">A curated selection of our bespoke rigid printed bucket solutions.</p>
     </div>
     
     <div className="max-w-7xl mx-auto px-6 md:px-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
