@@ -218,19 +218,22 @@ const HomePage = () => (
             <div className="h-px w-12 bg-brand-primary" />
             <span className="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em]">Banjani Pak Group</span>
           </div>
-          <h1 className="text-5xl md:text-[6.5rem] font-black leading-tight italic text-brand-dark tracking-tight">
+          <h1 className="text-4xl md:text-[5rem] font-black leading-tight italic text-brand-dark tracking-tight">
             Agents of <br/>
             <span className="text-brand-primary font-serif not-italic">Change</span>
           </h1>
-          <p className="text-lg md:text-xl text-brand-text/70 font-medium max-w-lg leading-relaxed">
-            Revolutionizing 20L rigid plastic buckets with bespoke high-definition digital branding that drives sales and strengthens visual identity.
-          </p>
+          <div className="space-y-4">
+             <h2 className="text-xl md:text-2xl font-black uppercase tracking-widest text-brand-dark opacity-80">20L Custom-Branded Printed Buckets</h2>
+             <p className="text-lg text-brand-text/70 font-medium max-w-lg leading-relaxed">
+               Premium rigid plastic bucket branding solutions that help your business stand out, sell more, and build stronger brand recognition.
+             </p>
+          </div>
           <div className="flex flex-wrap gap-6 pt-4">
-            <Link to="/gallery" className="px-10 py-5 bg-brand-primary text-white rounded-full font-black text-[11px] uppercase tracking-[0.2em] shadow-xl hover:bg-brand-secondary transition-all hover:-translate-y-1">
-              View Collection
+            <Link to="/contact" className="px-10 py-5 bg-brand-primary text-white rounded-full font-black text-[11px] uppercase tracking-[0.2em] shadow-xl hover:bg-brand-secondary transition-all hover:-translate-y-1">
+              Get a Quote Today
             </Link>
-            <Link to="/contact" className="px-10 py-5 border-2 border-brand-primary text-brand-primary rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-brand-primary hover:text-white transition-all">
-              Start Project
+            <Link to="/gallery" className="px-10 py-5 border-2 border-brand-primary text-brand-primary rounded-full font-black text-[11px] uppercase tracking-[0.2em] hover:bg-brand-primary hover:text-white transition-all">
+              View Our Designs
             </Link>
           </div>
         </motion.div>
@@ -244,6 +247,36 @@ const HomePage = () => (
              </div>
           </div>
         </motion.div>
+      </div>
+    </section>
+
+    {/* Introduction Section */}
+    <section className="py-24 bg-brand-light">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+        <div className="max-w-3xl mx-auto space-y-8">
+           <h3 className="text-2xl md:text-3xl font-black italic text-brand-dark">We create high-quality custom printed 20L buckets designed to promote your brand with style and impact.</h3>
+           <div className="w-24 h-1 bg-brand-primary mx-auto" />
+        </div>
+      </div>
+    </section>
+
+    {/* Why Businesses Choose Us */}
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="grid md:grid-cols-5 gap-8">
+          {[
+            { label: "Premium Print Quality", icon: Printer },
+            { label: "Strong Brand Visibility", icon: Palette },
+            { label: "Durable Bucket Materials", icon: ShieldCheck },
+            { label: "Creative Custom Designs", icon: Package },
+            { label: "Reliable Service", icon: CheckCircle2 }
+          ].map((item, i) => (
+            <div key={i} className="flex flex-col items-center text-center p-8 bg-brand-light rounded-[2rem] border border-brand-primary/5 hover:border-brand-primary transition-all">
+               <item.icon className="w-8 h-8 text-brand-primary mb-4" />
+               <span className="text-[10px] font-black uppercase tracking-widest leading-tight">{item.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -272,10 +305,13 @@ const AboutPage = () => (
             <span className="text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">About Us</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black italic leading-tight text-brand-dark">
-            20lt Buckets.
+            Agents of Change.
           </h2>
           <p className="text-xl text-brand-text/70 leading-loose font-medium">
-            We have crafted unique print designs with promotional... selling and advertising value propositions.
+            We specialize in <span className="text-brand-primary">20L custom-branded rigid printed buckets</span> created to give businesses a powerful promotional and advertising advantage.
+          </p>
+          <p className="text-lg text-brand-text/60 leading-loose italic font-medium">
+            Our buckets are more than packaging—they are branding tools designed to attract attention and grow visibility.
           </p>
           <div className="flex items-center gap-6 text-brand-primary">
             <CheckCircle2 className="w-6 h-6" />
@@ -290,24 +326,32 @@ const AboutPage = () => (
 
       {/* Why Choose Us */}
       <section className="bg-brand-dark rounded-[4rem] p-12 md:p-24 text-white">
-        <div className="text-center mb-20">
-          <h3 className="text-4xl font-black italic mb-4">Why Choose Us</h3>
-          <div className="w-20 h-1 bg-brand-primary mx-auto" />
-        </div>
-        <div className="grid md:grid-cols-2 gap-12">
-          {[
-            "We offer a high digital definition print of your logo and brand colours.",
-            "We create branded designs to establish a strong visual identity of your business.",
-            "We deliver bespoke world-class printed designs to enhance your brand image and appearance.",
-            "We do exclusive and customised designs for Christmas Hampers... Black Friday and Easter Buster promotions."
-          ].map((text, i) => (
-            <div key={i} className="flex gap-6 items-start p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-brand-primary transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white shrink-0 font-black">
-                {i + 1}
-              </div>
-              <p className="text-lg font-bold text-brand-gray-med leading-relaxed group-hover:text-white transition-colors">{text}</p>
+        <div className="grid lg:grid-cols-2 gap-20">
+          <div className="space-y-10">
+            <h3 className="text-4xl font-black italic mb-4">What We Offer</h3>
+            <div className="grid gap-6">
+              {[
+                "High-definition printing of your logo and brand colours",
+                "Unique custom designs that strengthen your business identity",
+                "Bespoke world-class bucket branding solutions",
+                "Seasonal campaign designs for promotions and special offers"
+              ].map((text, i) => (
+                <div key={i} className="flex gap-6 items-start p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-brand-primary transition-all group">
+                  <CheckCircle2 className="w-6 h-6 text-brand-primary shrink-0" />
+                  <p className="text-lg font-bold text-brand-gray-med leading-relaxed group-hover:text-white transition-colors">{text}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="space-y-10 flex flex-col justify-center">
+            <div className="p-12 bg-brand-primary rounded-[3rem] shadow-2xl relative overflow-hidden group">
+               <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+               <h3 className="text-3xl font-black italic mb-6 relative z-10">Why Choose Us?</h3>
+               <p className="text-xl font-medium leading-relaxed relative z-10 italic">
+                 "We combine creativity, quality materials, and professional printing to deliver durable branded buckets that make a lasting impression."
+               </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -318,7 +362,16 @@ const ProductsPage = () => (
   <main className="pt-32 pb-24 bg-brand-light min-h-screen">
     <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16 px-4">
       <span className="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em] mb-4 block underline decoration-brand-primary/20 underline-offset-8">Our Inventory</span>
-      <h2 className="text-4xl md:text-7xl font-black italic text-brand-dark leading-tight">Packaging Solutions.</h2>
+      <h2 className="text-4xl md:text-7xl font-black italic text-brand-dark leading-tight">20L Custom-Branded Buckets.</h2>
+      <p className="mt-6 text-brand-text/60 font-bold uppercase text-[10px] tracking-[0.3em]">Durable, practical, and professionally printed buckets ideal for:</p>
+      
+      <div className="flex flex-wrap justify-center gap-4 mt-8">
+        {["Retail packaging", "Promotional campaigns", "Hampers & Gift Packaging", "Brand awareness", "Product launches"].map((cat, i) => (
+          <span key={i} className="px-6 py-2 bg-white border border-brand-primary/10 rounded-full text-[10px] font-black uppercase tracking-widest text-brand-dark shadow-sm">
+            {cat}
+          </span>
+        ))}
+      </div>
     </div>
     
     <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-24">
@@ -332,7 +385,7 @@ const ProductsPage = () => (
         >
           <div className="flex-1 w-full relative">
             <div className="aspect-[4/5] bg-brand-light rounded-[3rem] overflow-hidden group">
-              <img src={item.url} alt={item.title} className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+              <img src={item.url} alt={item.title} className={`w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-700 ${i === 3 ? 'rounded-[150px]' : ''}`} referrerPolicy="no-referrer" />
             </div>
             <div className="absolute top-10 left-10 bg-brand-dark text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">
               Series {i + 1}
@@ -421,7 +474,7 @@ const ContactPage = () => (
       <div className="space-y-16">
         <div className="space-y-6">
           <span className="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em] block underline decoration-brand-primary/20 underline-offset-8">Get In Touch</span>
-          <h2 className="text-5xl md:text-7xl font-black italic leading-tight text-brand-dark">Elevate your packaging.</h2>
+          <h2 className="text-5xl md:text-7xl font-black italic leading-tight text-brand-dark">Ready to grow your brand with custom printed buckets?</h2>
         </div>
         
         <div className="space-y-10">
@@ -445,7 +498,7 @@ const ContactPage = () => (
       </div>
       
       <div className="bg-brand-light/30 rounded-[4rem] p-10 md:p-16 border border-brand-primary/5 shadow-inner">
-        <h3 className="text-3xl font-black italic text-brand-dark mb-10">Request a Bespoke Proposal.</h3>
+        <h3 className="text-3xl font-black italic text-brand-dark mb-10">Get in touch today for a custom quote.</h3>
         <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); alert("Inquiry submitted successfully. Roger will be in touch shortly."); }}>
           <div className="grid md:grid-cols-2 gap-8 text-brand-text">
             <div className="space-y-2">
