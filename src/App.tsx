@@ -220,7 +220,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                 <Mail className="w-4 h-4 text-brand-primary" />
               </div>
-              roger@banjanipg.co.za
+              rogerm@banjanipg.co.za
             </li>
             <li className="flex items-center gap-4 text-xs font-bold">
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
@@ -673,7 +673,7 @@ const ContactPage = () => (
         <div className="space-y-8 sm:space-y-12">
           {[
             { icon: Phone, label: "Direct Line", val: "076 891 0189", link: "tel:0768910189", highlight: true },
-            { icon: Mail, label: "Digital Mail", val: "roger@banjanipg.co.za", link: "mailto:roger@banjanipg.co.za" },
+            { icon: Mail, label: "Digital Mail", val: "rogerm@banjanipg.co.za", link: "mailto:rogerm@banjanipg.co.za" },
             { icon: MapPin, label: "Strategic Hub", val: "Springs, Gauteng", link: "#" },
             { icon: Clock, label: "Service Hours", val: "Mon - Fri: 08:00 - 17:00", link: "#" }
           ].map((item, i) => (
