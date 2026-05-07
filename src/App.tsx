@@ -298,7 +298,7 @@ const HomePage = () => (
              <img 
                src="https://i.ibb.co/20VxFFCM/IMG-20260421-WA0006.jpg" 
                alt="Feature Product" 
-               className="w-full h-auto rounded-[2rem] object-contain shadow-lg relative z-10" 
+               className="w-full h-auto rounded-[2rem] object-contain shadow-lg relative z-10 group-hover:scale-110 transition-transform duration-1000 ease-out" 
                referrerPolicy="no-referrer" 
              />
              <motion.div 
@@ -423,13 +423,15 @@ const AboutPage = () => (
         </motion.div>
         
         <motion.div 
-          className="relative bg-brand-light p-6 md:p-12 rounded-[3rem] md:rounded-[5rem] border border-brand-primary/5"
+          className="relative bg-brand-light p-6 md:p-12 rounded-[3rem] md:rounded-[5rem] border border-brand-primary/5 group"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
           <div className="absolute inset-0 bg-brand-primary/5 blur-3xl rounded-full" />
-          <img src={PRODUCT_IMAGES[4]} alt="Manufacturing" className="relative z-10 w-full h-auto rounded-[2rem] md:rounded-[4rem] shadow-2xl transition-transform hover:scale-105 duration-700" referrerPolicy="no-referrer" />
+          <div className="relative z-10 overflow-hidden rounded-[2rem] md:rounded-[4rem]">
+            <img src={PRODUCT_IMAGES[4]} alt="Manufacturing" className="w-full h-auto shadow-2xl transition-transform hover:scale-110 duration-1000 ease-out" referrerPolicy="no-referrer" />
+          </div>
           <div className="mt-8 text-center px-4">
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-gray-med italic">Industrial Digital Manufacturing Excellence</p>
           </div>
@@ -536,7 +538,7 @@ const ProductsPage = () => (
         >
           <div className="flex-1 w-full relative">
             <div className="aspect-[4/5] bg-brand-light rounded-[2.5rem] md:rounded-[4rem] overflow-hidden group flex items-center justify-center p-8">
-              <img src={item.url} alt={item.title} className={`w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ${i === 3 ? 'rounded-[150px]' : ''}`} referrerPolicy="no-referrer" />
+              <img src={item.url} alt={item.title} className={`w-full h-full object-contain group-hover:scale-115 transition-transform duration-1000 ease-out ${i === 3 ? 'rounded-[150px]' : ''}`} referrerPolicy="no-referrer" />
             </div>
             <motion.div 
               className="absolute top-6 left-6 md:top-10 md:left-10 bg-brand-dark text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl"
