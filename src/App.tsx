@@ -1,6 +1,6 @@
 
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Package, 
@@ -220,7 +220,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                 <Mail className="w-4 h-4 text-brand-primary" />
               </div>
-              rogerm@banjanipg.co.za
+              mnguniroger26@gmail.com
             </li>
             <li className="flex items-center gap-4 text-xs font-bold">
               <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
@@ -232,11 +232,24 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-        <p className="text-[9px] font-medium text-brand-gray-med tracking-[0.3em] uppercase text-center">
-          © {new Date().getFullYear()} BANJANI PAK GROUP. ALL RIGHTS RESERVED.
-        </p>
-        <div className="flex items-center gap-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 order-2 lg:order-1">
+          <p className="text-[9px] font-medium text-brand-gray-med tracking-[0.3em] uppercase text-center">
+            © {new Date().getFullYear()} BANJANI PAK GROUP. ALL RIGHTS RESERVED.
+          </p>
+          <div className="hidden md:block w-px h-3 bg-white/10" />
+          <a 
+            href="https://www.vibrantws.co.za" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-[9px] font-black uppercase tracking-[0.3em] text-brand-gray-med hover:text-brand-primary transition-colors duration-300 flex items-center gap-2 group"
+          >
+            <span className="opacity-50 group-hover:opacity-100 transition-opacity">Website Designed by</span>
+            <span className="text-white group-hover:text-brand-primary transition-colors">Vibrant Web Solutions</span>
+          </a>
+        </div>
+        
+        <div className="flex items-center gap-8 order-1 lg:order-2">
            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-brand-primary">Industrial Precision</span>
            <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-white/10" />
            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-brand-primary">Digital Artistry</span>
@@ -658,88 +671,203 @@ const GalleryPage = () => (
   </main>
 );
 
-const ContactPage = () => (
-  <main className="pt-28 sm:pt-36 pb-24 bg-white min-h-screen">
-    <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 sm:gap-20">
-      <div className="space-y-12 sm:space-y-20">
-        <motion.div 
-          className="space-y-6"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <span className="text-brand-primary text-[10px] md:text-sm font-black uppercase tracking-[0.4em] block underline decoration-brand-primary/20 underline-offset-8">Get In Touch</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black italic leading-[1.1] text-brand-dark">Ready to grow your brand?</h2>
-          <p className="text-lg sm:text-xl text-brand-text/60 font-medium max-w-lg">Let's craft the perfect custom printed buckets for your business needs.</p>
-        </motion.div>
-        
-        <div className="space-y-8 sm:space-y-12">
-          {[
-            { icon: Phone, label: "Direct Line", val: "076 891 0189", link: "tel:0768910189", highlight: true },
-            { icon: Mail, label: "Digital Mail", val: "rogerm@banjanipg.co.za", link: "mailto:rogerm@banjanipg.co.za" },
-            { icon: MapPin, label: "Strategic Hub", val: "Springs, Gauteng", link: "#" },
-            { icon: Clock, label: "Service Hours", val: "Mon - Fri: 08:00 - 17:00", link: "#" }
-          ].map((item, i) => (
-            <motion.a 
-              key={i} 
-              href={item.link} 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className={`flex items-center gap-6 sm:gap-10 group p-4 sm:p-6 rounded-3xl transition-all ${item.highlight ? 'bg-brand-primary/5 hover:bg-brand-primary/10 ring-1 ring-brand-primary/20' : 'hover:bg-brand-light'}`}
-            >
-              <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center transition-all shadow-md shrink-0 ${item.highlight ? 'bg-brand-primary text-white scale-110 shadow-brand-primary/20' : 'bg-white text-brand-primary group-hover:bg-brand-primary group-hover:text-white'}`}>
-                <item.icon className="w-6 h-6 sm:w-8 sm:h-8" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-brand-gray-med mb-1">{item.label}</p>
-                <p className={`text-xl sm:text-2xl md:text-3xl font-black truncate tracking-tight transition-colors ${item.highlight ? 'text-brand-primary' : 'text-brand-dark group-hover:text-brand-primary'}`}>{item.val}</p>
-              </div>
-            </motion.a>
-          ))}
-        </div>
-      </div>
-      
-      <motion.div 
-        className="bg-brand-light/40 rounded-[3rem] sm:rounded-[5rem] p-8 sm:p-16 border border-brand-primary/5 shadow-2xl relative overflow-hidden"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-      >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative z-10">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black italic text-brand-dark mb-10 leading-tight">Get in touch today for a custom quote.</h3>
-          <form className="space-y-6 sm:space-y-10" onSubmit={(e) => { e.preventDefault(); alert("Inquiry submitted successfully. Roger will be in touch shortly."); }}>
-            <div className="grid sm:grid-cols-2 gap-6 sm:gap-10 text-brand-text">
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest pl-4">Full Name</label>
-                <input required type="text" className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" placeholder="John Doe" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest pl-4">Contact Number</label>
-                <input required type="tel" className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" placeholder="+27 ..." />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest pl-4">Business Industry</label>
-              <input required type="text" className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" placeholder="e.g. Retail, Chemicals, Food" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest pl-4">Message Detail</label>
-              <textarea rows={4} className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all resize-none" placeholder="Describe your branding needs..."></textarea>
-            </div>
-            <button type="submit" className="w-full bg-brand-primary text-white py-6 md:py-8 rounded-2xl md:rounded-3xl font-black uppercase tracking-[0.2em] text-[11px] sm:text-[13px] shadow-2xl shadow-brand-primary/30 hover:bg-brand-secondary hover:scale-[1.02] active:scale-95 transition-all">
-              Submit Order Inquiry
-            </button>
-          </form>
-          <div className="mt-12 text-center">
-            <p className="text-[9px] font-black uppercase tracking-widest text-brand-gray-med">Managed by</p>
-            <h4 className="text-xl font-black italic text-brand-dark mt-2">Roger Mnguni</h4>
-            <span className="text-[10px] text-brand-primary font-black uppercase tracking-[0.3em]">Agents of Change</span>
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    industry: "",
+    message: ""
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", phone: "", industry: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("error");
+      setErrorMessage("Failed to connect to the server. Please check your internet.");
+    }
+  };
+
+  return (
+    <main className="pt-28 sm:pt-36 pb-24 bg-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 sm:gap-20">
+        <div className="space-y-12 sm:space-y-20">
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+          >
+            <span className="text-brand-primary text-[10px] md:text-sm font-black uppercase tracking-[0.4em] block underline decoration-brand-primary/20 underline-offset-8">Get In Touch</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black italic leading-[1.1] text-brand-dark">Ready to grow your brand?</h2>
+            <p className="text-lg sm:text-xl text-brand-text/60 font-medium max-w-lg">Let's craft the perfect custom printed buckets for your business needs.</p>
+          </motion.div>
+          
+          <div className="space-y-8 sm:space-y-12">
+            {[
+              { icon: Phone, label: "Direct Line", val: "076 891 0189", link: "tel:0768910189", highlight: true },
+              { icon: Mail, label: "Digital Mail", val: "mnguniroger26@gmail.com", link: "mailto:mnguniroger26@gmail.com" },
+              { icon: MapPin, label: "Strategic Hub", val: "Springs, Gauteng", link: "#" },
+              { icon: Clock, label: "Service Hours", val: "Mon - Fri: 08:00 - 17:00", link: "#" }
+            ].map((item, i) => (
+              <motion.a 
+                key={i} 
+                href={item.link} 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className={`flex items-center gap-6 sm:gap-10 group p-4 sm:p-6 rounded-3xl transition-all ${item.highlight ? 'bg-brand-primary/5 hover:bg-brand-primary/10 ring-1 ring-brand-primary/20' : 'hover:bg-brand-light'}`}
+              >
+                <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center transition-all shadow-md shrink-0 ${item.highlight ? 'bg-brand-primary text-white scale-110 shadow-brand-primary/20' : 'bg-white text-brand-primary group-hover:bg-brand-primary group-hover:text-white'}`}>
+                  <item.icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-brand-gray-med mb-1">{item.label}</p>
+                  <p className={`text-xl sm:text-2xl md:text-3xl font-black truncate tracking-tight transition-colors ${item.highlight ? 'text-brand-primary' : 'text-brand-dark group-hover:text-brand-primary'}`}>{item.val}</p>
+                </div>
+              </motion.a>
+            ))}
           </div>
         </div>
-      </motion.div>
-    </div>
-  </main>
-);
+        
+        <motion.div 
+          className="bg-brand-light/40 rounded-[3rem] sm:rounded-[5rem] p-8 sm:p-16 border border-brand-primary/5 shadow-2xl relative overflow-hidden"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="relative z-10">
+            {status === "success" ? (
+              <div className="text-center py-20 space-y-8">
+                <div className="w-24 h-24 bg-brand-primary rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-brand-primary/30">
+                  <CheckCircle2 className="w-12 h-12 text-white" />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-black italic text-brand-dark">Inquiry Sent!</h3>
+                  <p className="text-brand-text/60 font-medium max-w-xs mx-auto">Thank you for reaching out. Roger will be in touch with you shortly.</p>
+                </div>
+                <button 
+                  onClick={() => setStatus("idle")}
+                  className="px-8 py-4 bg-brand-dark text-white rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand-primary transition-all"
+                >
+                  Send another inquiry
+                </button>
+              </div>
+            ) : (
+              <>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black italic text-brand-dark mb-10 leading-tight">Get in touch today for a custom quote.</h3>
+                <form className="space-y-6 sm:space-y-10" onSubmit={handleSubmit}>
+                  <div className="grid sm:grid-cols-2 gap-6 sm:gap-10 text-brand-text">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest pl-4">Full Name</label>
+                      <input 
+                        required 
+                        type="text" 
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
+                        placeholder="John Doe" 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest pl-4">Email Address</label>
+                      <input 
+                        required 
+                        type="email" 
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
+                        placeholder="john@example.com" 
+                      />
+                    </div>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-6 sm:gap-10 text-brand-text">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest pl-4">Contact Number</label>
+                      <input 
+                        required 
+                        type="tel" 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
+                        placeholder="+27 ..." 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest pl-4">Business Industry</label>
+                      <input 
+                        required 
+                        type="text" 
+                        value={formData.industry}
+                        onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                        className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
+                        placeholder="Retail, Chemicals, etc." 
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest pl-4">Message Detail</label>
+                    <textarea 
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      rows={4} 
+                      className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all resize-none" 
+                      placeholder="Describe your branding needs..."
+                    ></textarea>
+                  </div>
+                  
+                  {status === "error" && (
+                    <p className="text-red-500 text-xs font-black uppercase tracking-widest text-center">{errorMessage}</p>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    disabled={status === "loading"}
+                    className={`w-full bg-brand-primary text-white py-6 md:py-8 rounded-2xl md:rounded-3xl font-black uppercase tracking-[0.2em] text-[11px] sm:text-[13px] shadow-2xl shadow-brand-primary/30 hover:bg-brand-secondary hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-4 ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
+                  >
+                    {status === "loading" ? (
+                      <>
+                        <Clock className="w-5 h-5 animate-spin" />
+                        Processing...
+                      </>
+                    ) : "Submit Order Inquiry"}
+                  </button>
+                </form>
+              </>
+            )}
+            <div className="mt-12 text-center">
+              <p className="text-[9px] font-black uppercase tracking-widest text-brand-gray-med">Managed by</p>
+              <h4 className="text-xl font-black italic text-brand-dark mt-2">Roger Mnguni</h4>
+              <span className="text-[10px] text-brand-primary font-black uppercase tracking-[0.3em]">Agents of Change</span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </main>
+  );
+};
 
 // --- MAIN APP ---
 
