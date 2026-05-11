@@ -676,7 +676,6 @@ const ContactPage = () => {
     name: "",
     email: "",
     phone: "",
-    industry: "",
     message: ""
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -688,25 +687,34 @@ const ContactPage = () => {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      // Using FormSubmit.co AJAX submission
+      const response = await fetch("https://formsubmit.co/ajax/mnguniroger26@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Banjani Pak Inquiry from ${formData.name}`,
+          _template: "table",
+          _honey: "" // Spam protection honeypot
+        })
       });
 
       const data = await response.json();
 
-      if (response.ok) {
+      if (data.success === "true") {
         setStatus("success");
-        setFormData({ name: "", email: "", phone: "", industry: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         setStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setErrorMessage("Submission failed. Please try again or use direct email.");
       }
     } catch (error) {
       console.error("Submission error:", error);
       setStatus("error");
-      setErrorMessage("Failed to connect to the server. Please check your internet.");
+      setErrorMessage("Connection error. Please check your internet or try again later.");
     }
   };
 
@@ -784,6 +792,7 @@ const ContactPage = () => {
                       <input 
                         required 
                         type="text" 
+                        name="name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
@@ -795,6 +804,7 @@ const ContactPage = () => {
                       <input 
                         required 
                         type="email" 
+                        name="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
@@ -808,21 +818,11 @@ const ContactPage = () => {
                       <input 
                         required 
                         type="tel" 
+                        name="phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
                         placeholder="+27 ..." 
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest pl-4">Business Industry</label>
-                      <input 
-                        required 
-                        type="text" 
-                        value={formData.industry}
-                        onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                        className="w-full bg-white border-0 rounded-2xl md:rounded-3xl px-8 py-5 md:py-7 focus:ring-4 focus:ring-brand-primary/10 shadow-xl placeholder:text-brand-gray-med/50 transition-all" 
-                        placeholder="Retail, Chemicals, etc." 
                       />
                     </div>
                   </div>
@@ -830,6 +830,7 @@ const ContactPage = () => {
                     <label className="text-[10px] font-black uppercase tracking-widest pl-4">Message Detail</label>
                     <textarea 
                       required
+                      name="message"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4} 
