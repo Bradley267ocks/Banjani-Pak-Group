@@ -698,6 +698,7 @@ const ContactPage = () => {
           ...formData,
           _subject: `New Banjani Pak Inquiry from ${formData.name}`,
           _template: "table",
+          _captcha: "false",
           _honey: "" // Spam protection honeypot
         })
       });
