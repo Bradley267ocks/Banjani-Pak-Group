@@ -33,17 +33,36 @@ export const PRODUCT_IMAGES = [
   "https://i.ibb.co/20VxFFCM/IMG-20260421-WA0006.jpg",
   "https://i.ibb.co/d0cr4W7V/IMG-20260421-WA0002.jpg",
   "https://i.ibb.co/vCpVGTH5/IMG-20260421-WA0005.jpg",
-  "https://i.ibb.co/ksP4ywpy/IMG-20260421-WA0000.jpg"
+  "https://i.ibb.co/ksP4ywpy/IMG-20260421-WA0000.jpg",
+  "https://i.ibb.co/CKjzckzC/Untitled-design-7.jpg",
+  "https://i.ibb.co/0jJd5KBx/IMG-20260421-WA0009.jpg",
+  "https://i.ibb.co/7JMNT4Xc/IMG-20260629-WA0002.jpg",
+  "https://i.ibb.co/6cccQVVT/IMG-20260629-WA0000.jpg",
+  "https://i.ibb.co/fGqL6wqL/IMG-20260629-WA0001.jpg",
+  "https://i.ibb.co/W4j19pxZ/FB-IMG-1782833362520.jpg",
+  "https://i.ibb.co/4wc0g2X5/FB-IMG-1782833355913.jpg",
+  "https://i.ibb.co/rR8n6kRQ/FB-IMG-1782833345917.jpg",
+  "https://i.ibb.co/h1C0MhbZ/FB-IMG-1782833323435.jpg",
+  "https://i.ibb.co/jkcvjXwj/FB-IMG-1782833282205.jpg"
 ];
 
-// FILTERED IMAGES (Removing Series 4 based on index 3 usually, but let's be safe and map them)
+// FILTERED IMAGES
 export const GALLERY_IMAGES = [
   { url: PRODUCT_IMAGES[0], title: "Exclusive Designs", desc: "Delivering world-class designs on Black Friday, Christmas Hamper and Easter Buster campaigns to drive seasonal sales." },
   { url: PRODUCT_IMAGES[2], title: "Industrial Grade", desc: "Durable and aesthetic 20L plastic buckets." },
-  // Series 4 removed: { url: PRODUCT_IMAGES[3], ...}
   { url: PRODUCT_IMAGES[4], title: "Custom Precision", desc: "High-definition print for clear branding." },
   { url: PRODUCT_IMAGES[5], title: "Bespoke Solutions", desc: "Tailored to your promotional needs." },
   { url: PRODUCT_IMAGES[6], title: "Global Standard", desc: "World-class digital manufacturing excellence." },
+  { url: PRODUCT_IMAGES[7], title: "Vibrant Marketing", desc: "Eye-catching designs for maximum brand impact." },
+  { url: PRODUCT_IMAGES[8], title: "Artistic Branding", desc: "Merging creativity with industrial quality." },
+  { url: PRODUCT_IMAGES[9], title: "Modern Solutions", desc: "Advanced printing for contemporary brands." },
+  { url: PRODUCT_IMAGES[10], title: "Promotional Power", desc: "High-impact visuals for your next campaign." },
+  { url: PRODUCT_IMAGES[11], title: "Sharp Precision", desc: "Unmatched clarity in digital manufacturing." },
+  { url: PRODUCT_IMAGES[12], title: "Corporate Identity", desc: "Strengthening your brand presence across all products." },
+  { url: PRODUCT_IMAGES[13], title: "Event Specialist", desc: "Bespoke buckets for corporate events and launches." },
+  { url: PRODUCT_IMAGES[14], title: "Durable Excellence", desc: "Quality that stands out and stays vibrant." },
+  { url: PRODUCT_IMAGES[15], title: "Innovative Design", desc: "Pushing the boundaries of bucket branding." },
+  { url: PRODUCT_IMAGES[16], title: "Premium Finishes", desc: "The ultimate choice for high-end promotional needs." },
 ];
 
 export const SERVICES = [
